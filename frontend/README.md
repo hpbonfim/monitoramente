@@ -1,4 +1,4 @@
-/**
+
  * ENERGIA - http://www.ons.org.br/
  * API ( BALANCO ENERGÉTICO ) - http://tr.ons.org.br/Content/GetBalancoEnergetico/undefined
  * API ( RESERVATÓRIOS ) - http://tr.ons.org.br/Content/Get/SituacaoDosReservatorios (http://www.ons.org.br/paginas/energia-agora/reservatorios)
@@ -6,7 +6,7 @@
  * * NORTE - http://tr.ons.org.br/Content/Get/Carga_Norte
  * * * TERMICA (GRÁFICOS) - http://tr.ons.org.br/Content/Get/Geracao_Norte_Termica
  * * * HIDRAULICA (GRÁFICOS) - http://tr.ons.org.br/Content/Get/Geracao_Norte_Hidraulica
- * * * EOLICA (GRÁFICOS) - hhttp://tr.ons.org.br/Content/Get/Geracao_Norte_Eolica
+ * * * EOLICA (GRÁFICOS) - http://tr.ons.org.br/Content/Get/Geracao_Norte_Eolica
  *
  * * NORDESTE - http://tr.ons.org.br/Content/Get/Carga_Nordeste
  * * * TERMICA (GRÁFICOS) - http://tr.ons.org.br/Content/Get/Geracao_Nordeste_Termica
@@ -35,4 +35,4 @@
  *
  * ÁGUA
  * TO-DO
- */
+ 
