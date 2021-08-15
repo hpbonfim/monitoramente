@@ -38,6 +38,8 @@ services:
     build: ./frontend
     container_name: frontend
     restart: always
+    volumes:
+      - ./frontend:/frontend
     ports:
       - "3000:3000"
     depends_on:
