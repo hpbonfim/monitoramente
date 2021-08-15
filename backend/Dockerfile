@@ -1,21 +1,22 @@
-#Dockerfile
-FROM node:12-slim
+FROM ruby:latest
 
-# create a worker folder
-WORKDIR /usr/src/backend
+RUN apt-get update && apt-get install -y \
+    curl \
+    build-essential \
+    libpq-dev && \
+    apt-get update && \
+    gem install rails
 
-# install app dependencies
-COPY package*.json ./
+WORKDIR /backend
+COPY Gemfile /backend/Gemfile
+RUN bundle install
+COPY . /backend
 
-# building clean install code for production
-RUN npm ci
+# Add a script to be executed every time the container starts.
+COPY entrypoint.sh /usr/bin/
+RUN chmod +x /usr/bin/entrypoint.sh
+ENTRYPOINT ["entrypoint.sh"]
+EXPOSE 3000
 
-# Bundle app source
-COPY . .
-
-# inject entrypoint script to docker location
-RUN cp docker-entrypoint.sh /usr/local/bin/ && \
-    chmod +x /usr/local/bin/docker-entrypoint.sh
-
-# start the app with secure shell cmd
-ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
+# Configure the main process to run when running the image
+CMD ["rails", "server", "-b", "0.0.0.0"]''
