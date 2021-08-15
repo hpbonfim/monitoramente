@@ -1,4 +1,6 @@
 
+ https://coolors.co/50514f-a8a7a7-fffcff-e4ecf4-c9dce8-92bcd0-5b9cb8-247ba0-74979d-c3b299
+ 
  * ENERGIA - http://www.ons.org.br/
  * API ( BALANCO ENERGÉTICO ) - http://tr.ons.org.br/Content/GetBalancoEnergetico/undefined
  * API ( RESERVATÓRIOS ) - http://tr.ons.org.br/Content/Get/SituacaoDosReservatorios (http://www.ons.org.br/paginas/energia-agora/reservatorios)

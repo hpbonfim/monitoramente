@@ -1,15 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from "react-router-dom"
+import Footer from './components/Footer'
+import Header from './components/Header'
+import routes from './routes'
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-    </div>
-  );
+    <>
+      <Header />
+      <Router >
+        <Switch>
+          {routes.map((route, i) => (
+            <Route
+              exact
+              key={i}
+              path={route.path}
+              render={(props) =>
+                // pass the sub-routes down to keep nesting: 
+                <route.component {...props} defaultProps={route.defaultProps} routes={route.routes} />
+              }
+            />
+          ))}
+          <Redirect from="*" to="/" />
+        </Switch>
+      </Router>
+      <Footer />
+    </>
+  )
 }
 
-export default App;
+export default App
