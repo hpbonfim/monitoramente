@@ -5,7 +5,6 @@ import {
   Route,
   Redirect
 } from "react-router-dom"
-import Footer from './components/Footer'
 import Header from './components/Header'
 import routes from './routes'
 
@@ -15,12 +14,12 @@ const App: React.FC = () => {
       <Header />
       <Router >
         <Switch>
-          {routes.map((route, i) => (
+          {routes.map((route: any, index: number) => (
             <Route
               exact
-              key={i}
+              key={index}
               path={route.path}
-              render={(props) =>
+              render={(props: any) =>
                 // pass the sub-routes down to keep nesting: 
                 <route.component {...props} defaultProps={route.defaultProps} routes={route.routes} />
               }
@@ -29,7 +28,6 @@ const App: React.FC = () => {
           <Redirect from="*" to="/" />
         </Switch>
       </Router>
-      <Footer />
     </>
   )
 }

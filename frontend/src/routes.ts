@@ -1,13 +1,13 @@
+import TestPage from "./pages/ReservatoriosDeAgua/show"
 import ReservatoriosDeAgua from "./pages/ReservatoriosDeAgua"
+import Inicio from "./pages/Inicio"
 
 const routes = [
   {
     path: "/",
-    component: ReservatoriosDeAgua,
+    component: Inicio,
     routes: [],
-    defaultProps: {
-      search: ''
-    }
+    defaultProps: {}
   },
   {
     path: "/reservatorios",
@@ -15,6 +15,14 @@ const routes = [
     routes: [],
     defaultProps: {
       search: 'reservatorios'
+    }
+  },
+  {
+    path: "/buscar",
+    component: TestPage,
+    routes: [],
+    defaultProps: {
+      search: ''
     }
   },
   /*

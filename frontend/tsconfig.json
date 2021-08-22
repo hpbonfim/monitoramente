@@ -21,6 +21,9 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
+    "src",
+    "craco.config.js",
+    "postcss.config.js",
+    "tailwind.config.js"
   ]
 }

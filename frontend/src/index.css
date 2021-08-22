@@ -1,16 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 :root {
    /* SCSS RGB */
-  --background-color: rgb(54, 95, 136);
-  --davys-grey: rgba(80, 81, 79, 1);
-  --silver-chalice: rgba(168, 167, 167, 1);
-  --snow: rgba(255, 252, 255, 1);
-  --alice-blue: rgba(228, 236, 244, 1);
-  --beau-blue: rgba(201, 220, 232, 1);
-  --dark-sky-blue: rgba(146, 188, 208, 1);
-  --air-superiority-blue: rgba(91, 156, 184, 1);
-  --celadon-blue: rgba(36, 123, 160, 1);
-  --steel-teal: rgba(116, 151, 157, 1);
-  --khaki-web: rgba(195, 178, 153, 1);
+  --background-color-1: rgb(36, 123, 160);
+  --background-color: rgba(36, 123, 160, 1);
+  --primary-color: rgba(59, 130, 246, 1);
+  --primary-color-light: rgba(59, 130, 246, 0.9);
 }
 
 body {
@@ -19,14 +17,8 @@ body {
   bottom: 0;
   width: 100vw;
   height: 100vh;
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
   background: var( --background-color);
 }
 
@@ -35,7 +27,6 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var(--snow);
 }
 
 .footer {
@@ -43,9 +34,9 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: var(--snow);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+button:hover {
+  border: 2px solid var(--primary-color-light);
+  background-color: var(--primary-color-light);
 }
