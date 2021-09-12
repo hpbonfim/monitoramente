@@ -1,6 +1,8 @@
-import TestPage from "./pages/ReservatoriosDeAgua/show"
 import ReservatoriosDeAgua from "./pages/ReservatoriosDeAgua"
 import Inicio from "./pages/Inicio"
+import GeradoresDeEnergia from "./pages/GeradoresDeEnergia"
+import NoticiasLocais from "./pages/NoticiasLocais"
+import SobreProjeto from "./pages/SobreProjeto"
 
 const routes = [
   {
@@ -13,17 +15,25 @@ const routes = [
     path: "/reservatorios",
     component: ReservatoriosDeAgua,
     routes: [],
-    defaultProps: {
-      search: 'reservatorios'
-    }
+    defaultProps: {}
   },
   {
-    path: "/buscar",
-    component: TestPage,
+    path: "/energia",
+    component: GeradoresDeEnergia,
     routes: [],
-    defaultProps: {
-      search: ''
-    }
+    defaultProps: {}
+  },
+  {
+    path: "/noticias",
+    component: NoticiasLocais,
+    routes: [],
+    defaultProps: {}
+  },
+  {
+    path: "/projeto",
+    component: SobreProjeto,
+    routes: [],
+    defaultProps: {}
   },
   /*
   {

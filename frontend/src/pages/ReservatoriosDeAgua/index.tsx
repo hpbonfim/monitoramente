@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import Footer from '../../components/Footer'
+import Header from '../../components/Header'
 
 interface ReservatoriosDeAguaProps {
     defaultProps: any
@@ -98,6 +100,7 @@ class ReservatoriosDeAgua extends Component<ReservatoriosDeAguaProps, Reservator
             return 'bg-red-100 text-red-800'
 
     }
+
     formatStatusColor(status: string) {
         switch (status) {
             case 'ATIVO':
@@ -108,94 +111,96 @@ class ReservatoriosDeAgua extends Component<ReservatoriosDeAguaProps, Reservator
         }
     }
 
-
-
     render() {
         return (
-            <section className='container max-w-7xl mx-auto py-6 sm:px-6 lg:px-8'>
+            <>
+                <Header />
+                <section className='container max-w-7xl mx-auto py-6 sm:px-6 lg:px-8'>
+                    {/* 
+                    <div className="relative rounded-md shadow-sm">
+                        <input
+                            type="search"
+                            name="cep"
+                            className="focus:ring-indigo-500 focus:border-indigo-500 block w-full p-3 pr-12 sm:text-sm border-gray-300 rounded-md"
+                            placeholder='DIGITE O CEP'
+                        />
+                    </div> */}
 
-                <div className="relative rounded-md shadow-sm">
-                    <input
-                        type="search"
-                        name="cep"
-                        className="focus:ring-indigo-500 focus:border-indigo-500 block w-full p-3 pr-12 sm:text-sm border-gray-300 rounded-md"
-                        placeholder='DIGITE O CEP'
-                    />
-                </div>
+                    <br />
+                    <br />
 
-                <br />
-                <br />
-
-                <div className="flex flex-col">
-                    <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-                        <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-                            <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-                                <table className="min-w-full divide-y divide-gray-200">
-                                    <thead className="bg-gray-50">
-                                        <tr>
-                                            <th
-                                                scope="col"
-                                                className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                            >
-                                                Reservatórios
-                                            </th>
-                                            <th
-                                                scope="col"
-                                                className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                            >
-                                                Localização
-                                            </th>
-                                            <th
-                                                scope="col"
-                                                className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                            >
-                                                Status
-                                            </th>
-                                            <th
-                                                scope="col"
-                                                className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                            >
-                                                Nível
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody className="bg-white divide-y divide-gray-200">
-                                        {reservatorios.map((reservatorio: any, index: number) => (
-                                            <tr key={index}>
-                                                <td className="px-6 py-4 whitespace-nowrap">
-                                                    <div className="flex items-center">
-                                                        <div className="flex-shrink-0 h-10 w-10">
-                                                            <img className="h-10 w-10 rounded-full" src={reservatorio.imagem} alt="" />
-                                                        </div>
-                                                        <div className="ml-4">
-                                                            <div className="text-sm font-medium text-gray-900">{reservatorio.nome}</div>
-                                                            <div className="text-sm text-gray-500">{reservatorio.detalhes}</div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td className="px-6 py-4 whitespace-nowrap">
-                                                    <div className="text-sm text-gray-900">{reservatorio.titulo}</div>
-                                                    <div className="text-sm text-gray-500">{reservatorio.localizacao}</div>
-                                                </td>
-                                                <td className="px-6 py-4 whitespace-nowrap">
-                                                    <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${this.formatStatusColor(reservatorio.status)}`}>
-                                                        {reservatorio.status}
-                                                    </span>
-                                                </td>
-                                                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                                    <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${this.formatNivelColor(reservatorio.nivel)}`}>
-                                                        {reservatorio.nivel}
-                                                    </span>
-                                                </td>
+                    <div className="flex flex-col">
+                        <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                            <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                                <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                                    <table className="min-w-full divide-y divide-gray-200">
+                                        <thead className="bg-gray-50">
+                                            <tr>
+                                                <th
+                                                    scope="col"
+                                                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                                >
+                                                    Reservatórios de ...
+                                                </th>
+                                                <th
+                                                    scope="col"
+                                                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                                >
+                                                    Localização
+                                                </th>
+                                                <th
+                                                    scope="col"
+                                                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                                >
+                                                    Status
+                                                </th>
+                                                <th
+                                                    scope="col"
+                                                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                                >
+                                                    Nível
+                                                </th>
                                             </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
+                                        </thead>
+                                        <tbody className="bg-white divide-y divide-gray-200">
+                                            {reservatorios.map((reservatorio: any, index: number) => (
+                                                <tr key={index}>
+                                                    <td className="px-6 py-4 whitespace-nowrap">
+                                                        <div className="flex items-center">
+                                                            <div className="flex-shrink-0 h-10 w-10">
+                                                                <img className="h-10 w-10 rounded-full" src={reservatorio.imagem} alt="" />
+                                                            </div>
+                                                            <div className="ml-4">
+                                                                <div className="text-sm font-medium text-gray-900">{reservatorio.nome}</div>
+                                                                <div className="text-sm text-gray-500">{reservatorio.detalhes}</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td className="px-6 py-4 whitespace-nowrap">
+                                                        <div className="text-sm text-gray-900">{reservatorio.titulo}</div>
+                                                        <div className="text-sm text-gray-500">{reservatorio.localizacao}</div>
+                                                    </td>
+                                                    <td className="px-6 py-4 whitespace-nowrap">
+                                                        <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${this.formatStatusColor(reservatorio.status)}`}>
+                                                            {reservatorio.status}
+                                                        </span>
+                                                    </td>
+                                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                                        <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${this.formatNivelColor(reservatorio.nivel)}`}>
+                                                            {reservatorio.nivel}
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
+                <Footer />
+            </>
         )
     }
 }
